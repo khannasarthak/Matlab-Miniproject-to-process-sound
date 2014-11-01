@@ -1,4 +1,4 @@
 
 clear y Fs
-[y,Fs] = audioread('D:\Padhai\Matlab\a.mp3',[80,90*20000]);
+[y,Fs] = audioread('D:\Padhai\Matlab\t1.wav',[4,8*64100]);
 sound(y,Fs)
