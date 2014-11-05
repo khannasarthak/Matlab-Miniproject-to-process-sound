@@ -1,7 +1,7 @@
 load handel.mat;
 
 
-[y, Fs] = audioread('D:\Padhai\Matlab\t2.wav');
+[y, Fs] = audioread('D:\Padhai\Matlab\test1.mp3');
  x =y + awgn(y,60);
 audiowrite('noisy1.wav',x, Fs);
 time=(1/44100)*length(y);
@@ -12,7 +12,7 @@ y2=flipud(y);
 
 y3 = y;
 y5 = [];
-N = 20000;
+N = 30000;
 z = length(y)
 for n = N+1:length(y)
     y3(n) = y(n) + y(n-N);
@@ -36,7 +36,7 @@ end
 
 f = fft(y5);
 subplot(211)
-stem(f)
+stem(y5)
 f1=f;
 c = length(y5)
 for i = 1:c
@@ -46,6 +46,6 @@ end
 y6 = ifft(f1);
 subplot(212)
 stem(y6)
-soundsc(y6,44100)
+soundsc(y3,44100)
    
         
